@@ -1,7 +1,9 @@
+import logo from '../B4Vlogo.svg';
+
 const Header = () => {
   return (
     <header>
-        <h1>Betting 4 Value</h1>
+        <img src={logo} alt='Betting 4 Value logo' />
     </header>
   );
 }

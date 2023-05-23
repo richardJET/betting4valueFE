@@ -3,7 +3,7 @@ import PickTable from './components/PickTable';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-white">
       <Header />
       <PickTable />
     </div>
