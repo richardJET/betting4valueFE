@@ -34,62 +34,62 @@ export default function PickTable() {
                             <thead>
                                 <tr>
                                     <th scope="col" className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-black sm:pl-0">
-                                        <a href="#" className="group inline-flex">
+                                        <a href="/#" className="group inline-flex">
                                             League
                                         </a>
                                     </th>
                                     <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-black">
-                                        <a href="#" className="group inline-flex">
+                                        <a href="/#" className="group inline-flex">
                                             Match Start
                                         </a>
                                     </th>
                                     <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-black">
-                                        <a href="#" className="group inline-flex">
+                                        <a href="/#" className="group inline-flex">
                                             Home Team
                                         </a>
                                     </th>
                                     <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-black">
-                                        <a href="#" className="group inline-flex">
+                                        <a href="/#" className="group inline-flex">
                                             Away Team
                                         </a>
                                     </th>
                                     <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-black">
-                                        <a href="#" className="group inline-flex">
+                                        <a href="/#" className="group inline-flex">
                                             Home Odds
                                         </a>
                                     </th>
                                     <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-black">
-                                        <a href="#" className="group inline-flex">
+                                        <a href="/#" className="group inline-flex">
                                             Draw Odds
                                         </a>
                                     </th>
                                     <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-black">
-                                        <a href="#" className="group inline-flex">
+                                        <a href="/#" className="group inline-flex">
                                             Away Odds
                                         </a>
                                     </th>
                                     <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-black">
-                                        <a href="#" className="group inline-flex">
+                                        <a href="/#" className="group inline-flex">
                                             Expected Home Odds
                                         </a>
                                     </th>
                                     <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-black">
-                                        <a href="#" className="group inline-flex">
+                                        <a href="/#" className="group inline-flex">
                                             Expected Draw Odds
                                         </a>
                                     </th>
                                     <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-black">
-                                        <a href="#" className="group inline-flex">
+                                        <a href="/#" className="group inline-flex">
                                             Expected Away Odds
                                         </a>
                                     </th>
                                     <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-black">
-                                        <a href="#" className="group inline-flex">
+                                        <a href="/#" className="group inline-flex">
                                             Play
                                         </a>
                                     </th>
                                     <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-black">
-                                        <a href="#" className="group inline-flex">
+                                        <a href="/#" className="group inline-flex">
                                             Play Value (%)
                                         </a>
                                     </th>
