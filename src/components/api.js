@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const apiEndpoint = 'http://ec2-3-137-149-173.us-east-2.compute.amazonaws.com:8000/';
+const apiEndpoint = '/betting-data';
 
 async function fetchData() {
     try {
-        const response = await axios.get(`${apiEndpoint}/betting-data`);
+        const response = await axios.get(apiEndpoint);
         return(response);
     } catch (error) {
         if (error.response) {
