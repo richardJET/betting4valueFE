@@ -1,4 +1,4 @@
-import logo from '../B4Vlogo.svg';
+import logo from '../white_logo_color_background.jpg';
 
 const navigation = [
   { name: 'Picks', href: '/#' },
@@ -13,7 +13,7 @@ export default function Header() {
         <div className="flex items-center gap-x-12">
           <a href="/#" className="-m-1.5 p-1.5">
             <span className="sr-only">Betting For Value</span>
-            <img className="h-12 w-auto" src={logo} alt="B4V loggo" />
+            <img className="h-20 w-auto" src={logo} alt="B4V loggo" />
           </a>
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
