@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiEndpoint = 'http://ec2-3-16-152-4.us-east-2.compute.amazonaws.com:8000/betting-data/';
+const apiEndpoint = 'betting-data/';
 
 async function fetchData() {
     try {
