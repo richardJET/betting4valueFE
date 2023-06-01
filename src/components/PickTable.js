@@ -55,37 +55,17 @@ export default function PickTable() {
                                     </th>
                                     <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-black">
                                         <a href="/#" className="group inline-flex">
-                                            Home Odds
-                                        </a>
-                                    </th>
-                                    <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-black">
-                                        <a href="/#" className="group inline-flex">
-                                            Draw Odds
-                                        </a>
-                                    </th>
-                                    <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-black">
-                                        <a href="/#" className="group inline-flex">
-                                            Away Odds
-                                        </a>
-                                    </th>
-                                    <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-black">
-                                        <a href="/#" className="group inline-flex">
-                                            Expected Home Odds
-                                        </a>
-                                    </th>
-                                    <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-black">
-                                        <a href="/#" className="group inline-flex">
-                                            Expected Draw Odds
-                                        </a>
-                                    </th>
-                                    <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-black">
-                                        <a href="/#" className="group inline-flex">
-                                            Expected Away Odds
-                                        </a>
-                                    </th>
-                                    <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-black">
-                                        <a href="/#" className="group inline-flex">
                                             Play
+                                        </a>
+                                    </th>
+                                    <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-black">
+                                        <a href="/#" className="group inline-flex">
+                                            Minimum Odds
+                                        </a>
+                                    </th>
+                                    <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-black">
+                                        <a href="/#" className="group inline-flex">
+                                            Expected Odds
                                         </a>
                                     </th>
                                     <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-black">
@@ -104,13 +84,9 @@ export default function PickTable() {
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{`${play.match_date} ${play.match_time}`}</td>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.home_team}</td>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.away_team}</td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.home_book_odds}</td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.draw_book_odds}</td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.away_book_odds}</td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.home_expected_odds}</td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.draw_expected_odds}</td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.away_expected_odds}</td>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.play}</td>
+                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.play === 'Home' ? (play.home_expected_odds * 1.2).toFixed(2) : play.play === 'Away' ? (play.away_expected_odds * 1.2).toFixed(2) : (play.draw_expected_odds * 1.2).toFixed(2)}</td>
+                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.play === 'Home' ? play.home_expected_odds : play.play === 'Away' ? play.away_expected_odds : play.draw_expected_odds}</td>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.play_value.toFixed(2)}</td>
                                     </tr>
                                 ))}
