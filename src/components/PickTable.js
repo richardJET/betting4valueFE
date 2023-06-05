@@ -43,6 +43,7 @@ export default function PickTable() {
     }, []);
 
     return (
+        plays.length > 0 ?
         <div className="relative px-4 sm:px-6 lg:px-8">
             <div className="sm:flex sm:items-center">
                 <div className="flex">
@@ -146,5 +147,6 @@ export default function PickTable() {
                 </div>
             </div>
         </div>
+        : <h3 className="text-center text-lg">No Plays for Today</h3>
     )
 }
