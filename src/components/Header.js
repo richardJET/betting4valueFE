@@ -2,7 +2,7 @@ import logo from '../B4Vlogo.svg';
 
 const navigation = [
   { name: 'Picks', href: '/#' },
-  { name: 'Blog', href: '/#' },
+  { name: 'Blog', href: '/blog' },
 ]
 
 export default function Header() {
