@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import { fetchData } from './api';
+import { bettingData } from './bettingData';
 
 export default function PickTable() {
 
@@ -10,7 +10,7 @@ export default function PickTable() {
     useEffect(() => {
         async function fetchPlays() {
             try {
-                const response = await fetchData();
+                const response = await bettingData();
                 console.log(response.data)
                 setPlays(response.data);
             } catch (error) {

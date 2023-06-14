@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-const apiEndpoint = 'betting-data/';
+const apiEndpoint = 'blog-pages/';
 
-async function fetchData() {
+async function blogData() {
     try {
         const response = await axios.get(apiEndpoint);
-        return(response);
+        return (response);
     } catch (error) {
         if (error.response) {
             // The request was made and the server responded with a status code that falls out of the range of 2xx
@@ -22,4 +22,4 @@ async function fetchData() {
     }
 }
 
-export { fetchData };
+export { blogData };
