@@ -10,13 +10,24 @@ export default function Blog(){
         async function fetchBlogPageData() {
             try {
                 const response = await blogData();
-                response.data.forEach((blog) => {
-                    if (blog.title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '') === slug){
-                        setBlogPageData(blog);
+                if (Array.isArray(response.data)) {
+                    const foundBlog = response.data.find((blog) => {
+                        return (
+                            blog.title
+                                .toLowerCase()
+                                .replace(/[^\w\s-]/g, '')
+                                .replace(/[\s_-]+/g, '-')
+                                .replace(/^-+|-+$/g, '') === slug
+                        );
+                    });
+                    if (foundBlog) {
+                        setBlogPageData(foundBlog);
                     }
-                });
+                } else {
+                    console.error('Invalid response data:', response.data);
+                }
             } catch (error) {
-                console.error('Error fetching plays:', error);
+                console.error('Error fetching blog data:', error);
             }
         }
 
