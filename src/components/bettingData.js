@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiEndpoint = 'betting-data/';
+const apiEndpoint = '/betting-data/';
 
 async function bettingData() {
     try {
