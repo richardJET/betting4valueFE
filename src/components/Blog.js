@@ -10,6 +10,7 @@ export default function Blog(){
         async function fetchBlogData() {
             try {
                 const response = await blogData();
+                console.log(response.data)
                 setPosts(response.data);
             } catch (error) {
                 console.error('Error fetching blog posts:', error);
