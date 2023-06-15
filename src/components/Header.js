@@ -1,4 +1,4 @@
-import logo from '../B4Vlogo.svg';
+import logo from '../B4Vlogo.jpg';
 
 const navigation = [
   { name: 'Picks', href: '/#' },
