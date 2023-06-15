@@ -4,41 +4,30 @@ import { useEffect, useState } from 'react';
 
 export default function Blog(){
     const { slug } = useParams();
-    const [blogPageData, setBlogPageData] = useState({});
-    
+    const [posts, setPosts] = useState([]);
+
     useEffect(() => {
-        async function fetchBlogPageData() {
+        async function fetchBlogData() {
             try {
                 const response = await blogData();
-                if (Array.isArray(response.data)) {
-                    const foundBlog = response.data.find((blog) => {
-                        return (
-                            blog.title
-                                .toLowerCase()
-                                .replace(/[^\w\s-]/g, '')
-                                .replace(/[\s_-]+/g, '-')
-                                .replace(/^-+|-+$/g, '') === slug
-                        );
-                    });
-                    if (foundBlog) {
-                        setBlogPageData(foundBlog);
-                    }
-                } else {
-                    console.error('Invalid response data:', response.data);
-                }
+                setPosts(response.data);
             } catch (error) {
-                console.error('Error fetching blog data:', error);
+                console.error('Error fetching blog posts:', error);
             }
         }
 
-        fetchBlogPageData();
-    }, [slug]);
+        fetchBlogData();
+    }, []);
+
+    const blogPage = posts.find(blog =>
+        blog.title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '') === slug
+    );
 
     return (
-        blogPageData?
+        blogPage?
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
-            <h1 className="text-2xl md:text-3xl font-bold mb-4">{blogPageData.title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: blogPageData.body }}></div>
+            <h1 className="text-2xl md:text-3xl font-bold mb-4">{blogPage.title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: blogPage.body }}></div>
         </div>
         :null
     )
