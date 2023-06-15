@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiEndpoint = 'fetch-blog-posts/';
+const apiEndpoint = 'blog-posts/';
 
 async function blogData() {
     try {
