@@ -12,7 +12,7 @@ export default function BlogPages() {
                 const response = await blogData();
                 setPosts(response.data);
             } catch (error) {
-                console.error('Error fetching plays:', error);
+                console.error('Error fetching blog posts:', error);
             }
         }
     
