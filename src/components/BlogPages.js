@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { blogData } from './blogData';
+import { Link } from 'react-router-dom';
 
 
 export default function BlogPages() {
@@ -9,7 +10,6 @@ export default function BlogPages() {
         async function fetchBlogData() {
             try {
                 const response = await blogData();
-                console.log(response.data)
                 setPosts(response.data);
             } catch (error) {
                 console.error('Error fetching plays:', error);
@@ -18,8 +18,6 @@ export default function BlogPages() {
     
         fetchBlogData();
     }, []);
-    
-    console.log(posts)
 
     return (
         <div className="bg-white py-24 sm:py-32">
@@ -38,17 +36,17 @@ export default function BlogPages() {
                                     {post.date}
                                 </time>
                                 <ul className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                                    {post.categories.map(category => (
-                                            <li>{category}</li>
+                                    {post.categories.map((category, index) => (
+                                            <li key={index}>{category}</li>
                                     ))}
                                 </ul>
                             </div>
                             <div className="group relative">
                                 <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                                    <a href={post.href}>
+                                    <Link to={post.title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')}>
                                         <span className="absolute inset-0" />
                                         {post.title}
-                                    </a>
+                                    </Link>
                                 </h3>
                                 <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{post.intro}</p>
                             </div>
