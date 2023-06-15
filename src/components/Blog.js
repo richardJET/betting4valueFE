@@ -24,10 +24,12 @@ export default function Blog(){
     }, [slug]);
 
     return (
+        blogPageData?
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
             <h1 className="text-2xl md:text-3xl font-bold mb-4">{blogPageData.title}</h1>
             <div dangerouslySetInnerHTML={{ __html: blogPageData.body }}></div>
         </div>
+        :null
     )
 }
 
