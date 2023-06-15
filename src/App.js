@@ -3,6 +3,7 @@ import PickTable from './components/PickTable';
 import Footer from './components/Footer';
 import { Routes, Route } from 'react-router-dom';
 import BlogPages from './components/BlogPages';
+import Blog from './components/Blog';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<PickTable />} />
         <Route path="/blog" element={<BlogPages />} />
+        <Route path="/blog/:slug" element={<Blog />} />
       </Routes>
       <Footer />
     </div>
