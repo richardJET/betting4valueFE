@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiEndpoint = 'http://ec2-18-118-25-95.us-east-2.compute.amazonaws.com:8000/csgo-data/';
+const apiEndpoint = '/csgo-data/';
 
 async function csgoData() {
     try {
