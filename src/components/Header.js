@@ -3,9 +3,9 @@ import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Picks from './PicksMenu';
 
 const navigation = [
-  { name: 'Picks', href: '/' },
   { name: 'Blog', href: '/blog' },
 ]
 
@@ -32,6 +32,7 @@ export default function Header() {
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
+          <Picks />
           {navigation.map((item) => (
             <Link key={item.name} to={item.href} className="text-sm font-semibold leading-6 text-gray-900">
               {item.name}
@@ -63,6 +64,7 @@ export default function Header() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
+                <Picks />
                 {navigation.map((item) => (
                   <Link
                     key={item.name}

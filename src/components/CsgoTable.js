@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
-import { bettingData } from './bettingData';
+import { csgoData } from './csgoData';
 
-export default function PickTable() {
+export default function CsgoTable() {
 
     const[plays, setPlays] = useState([]);
     const[info, setInfo] = useState(false);
@@ -10,7 +10,7 @@ export default function PickTable() {
     useEffect(() => {
         async function fetchPlays() {
             try {
-                const response = await bettingData();
+                const response = await csgoData();
                 console.log(response.data)
                 setPlays(response.data);
             } catch (error) {
@@ -47,7 +47,7 @@ export default function PickTable() {
         <div className="relative px-4 sm:px-6 lg:px-8">
             <div className="sm:flex sm:items-center">
                 <div className="flex">
-                    <h1 className="text-base font-semibold leading-6 text-black">Soccer Plays</h1>
+                    <h1 className="text-base font-semibold leading-6 text-black">CS:GO Plays</h1>
                     <button className="mx-2" onClick={() => setInfo(true)}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +69,7 @@ export default function PickTable() {
                     <div className='max-w-lg absolute left-40 top-0'>
                         <div ref={modalRef} className="bg-white border border-gray-200 p-2">
                             <p>
-                                The soccer model uses advanced metrics to predict the outcome of soccer games and compares the results
+                                The CS:GO model uses advanced metrics to predict the outcome of sCS:GO games and compares the results
                                 to the latest betting lines. Before placing a bet ensure that your sportsbook's odds for the event are
                                 greater than the minimum odds listed below.
                             </p>
@@ -130,15 +130,15 @@ export default function PickTable() {
                                 {plays.map((play) => (
                                     <tr key={play.id}>
                                         <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium sm:pl-0 text-black">
-                                            {play.league_name}
+                                            {play.league}
                                         </td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{`${play.match_date} ${play.match_time}`}</td>
+                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.start_time}</td>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.home_team}</td>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.away_team}</td>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.play}</td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.play === 'Home' ? (play.home_expected_odds * 1.2).toFixed(2) : play.play === 'Away' ? (play.away_expected_odds * 1.2).toFixed(2) : (play.draw_expected_odds * 1.2).toFixed(2)}</td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.play === 'Home' ? play.home_expected_odds : play.play === 'Away' ? play.away_expected_odds : play.draw_expected_odds}</td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.play_value.toFixed(2)}</td>
+                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{parseFloat(play.minimum_odds).toFixed(2)}</td>
+                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{parseFloat(play.expected_odds).toFixed(2)}</td>
+                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{parseFloat(play.play_value).toFixed(2)}</td>
                                     </tr>
                                 ))}
                             </tbody>
