@@ -1,5 +1,6 @@
 import Header from './components/Header';
-import PickTable from './components/PickTable';
+import SoccerTable from './components/SoccerTable';
+import CsgoTable from './components/CsgoTable';
 import Footer from './components/Footer';
 import { Routes, Route } from 'react-router-dom';
 import BlogPages from './components/BlogPages';
@@ -10,7 +11,9 @@ function App() {
     <div className="App bg-white">
       <Header />
       <Routes>
-        <Route path="/" element={<PickTable />} />
+        <Route path="/" element={<SoccerTable />} />
+        <Route path="/soccer" element={<SoccerTable />} />
+        <Route path="/csgo" element={<CsgoTable />} />
         <Route path="/blog" element={<BlogPages />} />
         <Route path="/blog/:slug" element={<Blog />} />
       </Routes>
