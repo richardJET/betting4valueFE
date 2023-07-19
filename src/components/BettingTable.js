@@ -54,10 +54,10 @@ export default function BettingTable() {
 
     return (
         plays.length > 0 ?
-            <div className="relative px-4 sm:px-6 lg:px-8">
+            <div className="relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                 <div className="sm:flex sm:items-center">
                     <div className="flex">
-                        <h1 className="text-base font-semibold leading-6 text-black">Soccer Plays</h1>
+                        <h1 className="text-base font-semibold leading-6 text-black">{sport === 'csgo' ? 'CS:GO plays' : 'Soccer Plays'}</h1>
                         <button className="mx-2" onClick={() => setInfo(true)}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +79,7 @@ export default function BettingTable() {
                         <div className='max-w-lg absolute left-40 top-0'>
                             <div ref={modalRef} className="bg-white border border-gray-200 p-2">
                                 {sport === 'csgo' ? <p>
-                                    The CS:GO model uses advanced metrics to predict the outcome of sCS:GO games and compares the results
+                                    The CS:GO model uses advanced metrics to predict the outcome of CS:GO games and compares the results
                                     to the latest betting lines. Before placing a bet ensure that your sportsbook's odds for the event are
                                     greater than the minimum odds listed below.
                                 </p> 
