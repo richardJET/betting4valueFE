@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import CsgoTable from './CsgoTable';
 import SoccerTable from './SoccerTable';
 import Stats from './Stats';
+import ErrorPage from './ErrorPage';
 
 export default function BettingTable() {
 
@@ -54,6 +55,7 @@ export default function BettingTable() {
     }, []);
 
     return (
+        sport === 'csgo' || sport === 'soccer' ?
         <>
             <Stats />
             {plays.length > 0 ?
@@ -100,5 +102,6 @@ export default function BettingTable() {
                 </div>
             : <h3 className="text-center text-lg">No Plays for Today</h3>}
         </>
+        : <ErrorPage />
     )
 }
