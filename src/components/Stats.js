@@ -1,7 +1,7 @@
 const stats = [
-    { name: 'Past Week', stat: '0 - 0 - 0', roi: '0.00%' },
-    { name: 'Past Month', stat: '0 - 0 - 0', roi: '0.00%' },
-    { name: 'Past Year', stat: '0 - 0 - 0', roi: '0.00%' },
+    { name: 'Past Week', stat: '0 - 0', roi: '0.00%' },
+    { name: 'Past Month', stat: '0 - 0', roi: '0.00%' },
+    { name: 'Past Year', stat: '0 - 0', roi: '0.00%' },
 ]
 
 export default function Stats() {
