@@ -1,6 +1,7 @@
 import { blogData } from './blogData';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import ErrorPage from './ErrorPage';
 
 export default function Blog(){
     const { slug } = useParams();
@@ -39,7 +40,7 @@ export default function Blog(){
             <div className='text-slate-900'>{blogPage.author}</div>
                 <div className='[&>p]:mb-6 [&>ol]:list-decimal [&>ol]:pl-4 [&>ol>li]:mb-4 [&>ul]:list-disc [&>ul]:pl-4 [&>ul>li]:mb-4 mt-6' dangerouslySetInnerHTML={{ __html: blogPage.body }}></div>
         </div>
-        :null
+        :<ErrorPage />
     )
 }
 
