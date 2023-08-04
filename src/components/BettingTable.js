@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import { csgoData } from './csgoData';
-import { bettingData } from './bettingData';
+import { api } from './api';
 import { useParams } from 'react-router-dom';
 import CsgoTable from './CsgoTable';
 import SoccerTable from './SoccerTable';
@@ -20,9 +19,9 @@ export default function BettingTable() {
             try {
                 let response;
                 if (sport === 'csgo') {
-                    response = await csgoData();
+                    response = await api('/csgo-data/');
                 } else {
-                    response = await bettingData();
+                    response = await api('/betting-data/');
                 }
                 console.log(response.data)
                 setPlays(response.data);
