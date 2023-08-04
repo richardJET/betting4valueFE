@@ -13,6 +13,7 @@ export default function BettingTable() {
     const [info, setInfo] = useState(false);
     const modalRef = useRef();
     const { sport } = useParams();
+    console.log(sport);
 
     useEffect(() => {
         async function fetchPlays() {
@@ -55,7 +56,7 @@ export default function BettingTable() {
     }, []);
 
     return (
-        sport === 'csgo' || sport === 'soccer' || sport === '' ?
+        sport === 'csgo' || sport === 'soccer' || sport === undefined ?
         <>
             <Stats />
             {plays.length > 0 ?
