@@ -5,6 +5,7 @@ import BlogPages from './components/BlogPages';
 import Blog from './components/Blog';
 import BettingTable from './components/BettingTable';
 import ErrorPage from './components/ErrorPage';
+import PastPicks from './components/PastPicks';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<BettingTable />} />
         <Route path="/:sport" element={<BettingTable />} />
+        <Route path="/:sport/history" element={<PastPicks />} />
         <Route path="/blog" element={<BlogPages />} />
         <Route path="/blog/:slug" element={<Blog />} />
         <Route path="/*" element={<ErrorPage />} />

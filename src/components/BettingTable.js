@@ -55,7 +55,7 @@ export default function BettingTable() {
     }, []);
 
     return (
-        sport === 'csgo' || sport === 'soccer' ?
+        sport === 'csgo' || sport === 'soccer' || sport === '' ?
         <>
             <Stats />
             {plays.length > 0 ?
