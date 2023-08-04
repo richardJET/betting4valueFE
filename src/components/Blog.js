@@ -1,4 +1,4 @@
-import { blogData } from './blogData';
+import { api } from './api';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ErrorPage from './ErrorPage';
@@ -11,7 +11,7 @@ export default function Blog(){
     useEffect(() => {
         async function fetchBlogData() {
             try {
-                const response = await blogData();
+                const response = await api('/blog-posts/');
                 setPosts(response.data);
             } catch (error) {
                 console.error('Error fetching blog posts:', error);

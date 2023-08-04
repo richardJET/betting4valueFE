@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const apiEndpoint = '/soccer-history/';
 
-async function soccerHistory() {
+async function api(apiEndpoint) {
+    
     try {
         const response = await axios.get(apiEndpoint);
         return (response);
@@ -22,4 +22,4 @@ async function soccerHistory() {
     }
 }
 
-export { soccerHistory };
+export { api };

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
-import { soccerHistory } from "./soccerHistory";
+import { api } from './api';
 import SoccerTable from "./SoccerTable";
 
 export default function PastPicks() {
@@ -10,7 +10,7 @@ export default function PastPicks() {
     useEffect(() => {
         async function fetchSoccerHistory() {
             try{
-                const response = await soccerHistory();
+                const response = await api('/soccer-history/');
                 setSoccerPicks(response.data);
             }
             catch (error) {
