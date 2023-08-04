@@ -24,6 +24,8 @@ export default function PastPicks() {
         fetchSoccerHistory();
     }, []);
 
+    console.log(soccerPicks)
+
     return (
         sport === 'soccer' ?
             <div className="px-4 sm:px-6 lg:px-8">
