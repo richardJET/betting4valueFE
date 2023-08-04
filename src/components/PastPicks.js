@@ -21,8 +21,10 @@ export default function PastPicks() {
     }, []);
 
     return (
-        soccerPicks.length > 0 && sport === 'soccer' ?
-        <SoccerTable plays={soccerPicks} />
-        : <h2> Coming Soon </h2>
+        <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            {soccerPicks.length > 0 && sport === 'soccer' ?
+            <SoccerTable plays={soccerPicks} />
+            : <h2 className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"> Coming Soon </h2>}
+        </div>
     )
 }
