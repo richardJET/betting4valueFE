@@ -1,12 +1,77 @@
-import { Link } from 'react-router-dom';
-
-const stats = [
-    { name: 'Past Week', stat: '0 - 0', roi: '0.00%' },
-    { name: 'Past Month', stat: '0 - 0', roi: '0.00%' },
-    { name: 'Past Year', stat: '0 - 0', roi: '0.00%' },
-]
+import { Link, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { api } from './api';
 
 export default function Stats() {
+    const { sport } = useParams();
+    const [stats, setStats] = useState([
+        { name: 'Past Week', stat: '0 - 0', roi: '0.00%' },
+        { name: 'Past Month', stat: '0 - 0', roi: '0.00%' },
+        { name: 'Past Year', stat: '0 - 0', roi: '0.00%' },
+    ]);
+    const [history, setHistory] = useState([]);
+
+    useEffect(() => {
+        async function fetchStats() {
+            try {
+                let response;
+                if (sport === 'csgo') {
+                    response = await api('/csgo-history/');
+                } else {
+                    response = await api('/soccer-history/');
+                }
+                setHistory(response.data);
+            } catch (error) {
+                console.error('Error fetching plays:', error);
+            }
+        }
+        fetchStats();
+    }, [sport]);
+
+    useEffect(() => {
+        setStats([
+            { name: 'Past Week', stat: calculateStats(7, history)[0] + ' - ' + calculateStats(7, history)[1], roi: (calculateStats(7, history)[3] / calculateStats(7, history)[2] * 100).toFixed(2) + '%' },
+            { name: 'Past Month', stat: calculateStats(30, history)[0] + ' - ' + calculateStats(30, history)[1], roi: (calculateStats(30, history)[3] / calculateStats(30, history)[2] * 100).toFixed(2) + '%' },
+            { name: 'Past Year', stat: calculateStats(365, history)[0] + ' - ' + calculateStats(365, history)[1], roi: (calculateStats(365, history)[3] / calculateStats(365, history)[2] * 100).toFixed(2) + '%' },
+        ]);
+    }
+    , [history]);
+
+    function calculateStats(days, data) {
+        const currentDate = new Date();
+        const pastDate = new Date(); 
+        pastDate.setDate(currentDate.getDate() - days);
+        let startTime;
+        
+        let wins = 0;
+        let losses = 0;
+        let wagered = 0;
+        let profit = 0;
+        data.forEach((item) => {
+            if (item.start_time){
+                startTime = new Date(item.start_time);
+            } else {
+                const matchDateTimeString = `${item.match_date}T${item.match_time}`;
+                startTime = new Date(matchDateTimeString);
+                console.log(startTime, pastDate)
+            }
+            if (startTime >= pastDate) {
+                if(item.result === 'Won') {
+                    profit += 100;
+                    wagered += 100 / ((item.play_price) - 1);
+                    wins++;
+                }
+                if(item.result === 'Lost') {
+                    profit -= 100 / ((item.play_price) - 1);
+                    wagered += 100 / ((item.play_price) -1);
+                    losses++;
+                }
+            }
+        })
+ 
+        return [wins, losses, wagered, profit];
+    }
+
     return (
         <>
             <div className="relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-4">
@@ -25,7 +90,7 @@ export default function Stats() {
                     ))}
                 </dl>
                 <div className="mt-2 ml-2">
-                        <Link to="/soccer/history" className="text-sm font-semibold leading-7 text-indigo-600">
+                        <Link to={sport === 'csgo' ? "/csgo/history" : "/soccer/history"} className="text-sm font-semibold leading-7 text-indigo-600">
                             View pick history <span aria-hidden="true">&rarr;</span>
                         </Link>
                 </div>
