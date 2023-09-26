@@ -84,7 +84,7 @@ export default function SoccerTable({plays}) {
                                     :
                                     <>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.play_price}</td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-black">Pending</td>
+                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.result}</td>
                                     </>}
                                 </tr>
                             ))}

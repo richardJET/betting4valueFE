@@ -2,4 +2,5 @@
 /blog-posts/* http://ec2-18-118-25-95.us-east-2.compute.amazonaws.com:8000/blog-posts/ 200
 /csgo-data/* http://ec2-18-118-25-95.us-east-2.compute.amazonaws.com:8000/csgo-data/ 200
 /soccer-history/* http://ec2-18-118-25-95.us-east-2.compute.amazonaws.com:8000/soccer-history/ 200
+/csgp-history/* http://ec2-18-118-25-95.us-east-2.compute.amazonaws.com:8000/csgo-history/ 200
 /* /index.html 200
