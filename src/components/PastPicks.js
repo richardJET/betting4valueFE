@@ -14,7 +14,7 @@ export default function PastPicks() {
             try{
                 let response;
                 if (sport === 'csgo') {
-                    response = await api('http://ec2-18-118-25-95.us-east-2.compute.amazonaws.com:8000/csgo-history/');
+                    response = await api('/csgo-history/');
                     setCsgoPicks(response.data);
                 } else {
                     response = await api('/soccer-history/');
