@@ -34,17 +34,12 @@ export default function CsgoTable({plays}) {
                                     </th>
                                     <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-black">
                                         <a href="/#" className="group inline-flex">
-                                            Minimum Odds
+                                            Play Price
                                         </a>
                                     </th>
                                     <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-black">
                                         <a href="/#" className="group inline-flex">
-                                            Expected Odds
-                                        </a>
-                                    </th>
-                                    <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-black">
-                                        <a href="/#" className="group inline-flex">
-                                            Play Value (%)
+                                            Result
                                         </a>
                                     </th>
                                 </tr>
@@ -59,9 +54,8 @@ export default function CsgoTable({plays}) {
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.home_team}</td>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.away_team}</td>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.play}</td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{parseFloat(play.minimum_odds).toFixed(2)}</td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{parseFloat(play.expected_odds).toFixed(2)}</td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{parseFloat(play.play_value).toFixed(2)}</td>
+                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{parseFloat(play.play_price).toFixed(2)}</td>
+                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.result}</td>
                                     </tr>
                                 ))}
                             </tbody>
