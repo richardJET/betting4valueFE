@@ -31,7 +31,7 @@ export default function Community() {
                     <li className="w-48 m-5">
                         <FontAwesomeIcon icon={faThumbsUp} size="2xl" />
                         <h4 className="text-2xl font-semibold my-2">Risk Free Plays</h4>
-                        <p>Make guranteed no-risk profit with arbitrage betting</p>
+                        <p>Make guaranteed no-risk profit with arbitrage betting</p>
                     </li>
                     <li className="w-48 m-5">
                         <FontAwesomeIcon icon={faChartSimple} size="2xl" />
