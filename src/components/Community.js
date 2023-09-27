@@ -36,12 +36,12 @@ export default function Community() {
                     <li className="w-48 m-5">
                         <FontAwesomeIcon icon={faChartSimple} size="2xl" />
                         <h4 className="text-2xl font-semibold my-2">Analysis</h4>
-                        <p>Utlizie proven and profitable betting strategies and models</p>
+                        <p>Learn about profitable betting strategies and models</p>
                     </li>
                     <li className="w-48 m-5">
                         <FontAwesomeIcon icon={faArrowTrendUp} size="2xl" />
                         <h4 className="text-2xl font-semibold my-2">Boosts and Promos</h4>
-                        <p>Get the most out of deposit bonuses and sportsbook promotions</p>
+                        <p>Get the most out of sportsbook deposit bonuses and promotions</p>
                     </li>
                     <li className="w-48 m-5">
                         <FontAwesomeIcon icon={faPhone} size="2xl" />
