@@ -53,7 +53,6 @@ export default function Stats() {
             } else {
                 const matchDateTimeString = `${item.match_date}T${item.match_time}`;
                 startTime = new Date(matchDateTimeString);
-                console.log(startTime, pastDate)
             }
             if (startTime >= pastDate) {
                 if(item.result === 'Won') {

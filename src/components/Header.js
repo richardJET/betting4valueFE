@@ -34,10 +34,13 @@ export default function Header() {
         <div className="hidden lg:flex lg:gap-x-12">
           <Picks />
           {navigation.map((item) => (
-            <Link key={item.name} to={item.href} className="text-sm font-semibold leading-6 text-gray-900">
+            <Link key={item.name} to={item.href} className="text-sm font-semibold leading-6 text-gray-900 my-auto">
               {item.name}
             </Link>
           ))}
+          <Link to="/community" className="bg-blurple py-3 px-4 inline-flex justify-center items-center rounded-md font-bold border text-sm leading-6 text-white hover:bg-light-blurple transition-all focus:outline-none focus:ring-2 focus:ring-blurple focus:ring-offset-2">
+            Join the Community
+          </Link>
         </div>
       </nav>
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
