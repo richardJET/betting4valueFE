@@ -10,7 +10,7 @@ import Community from './components/Community';
 
 function App() {
   return (
-    <div className="bg-white ">
+    <div className="bg-white text-black">
       <Header />
       <Routes>
         <Route path="/" element={<BettingTable />} />
