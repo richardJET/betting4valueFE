@@ -14,7 +14,7 @@ function classNames(...classes) {
 export default function Picks() {
     return (
         <>
-            <Popover className="relative">
+            <Popover className="relative my-auto">
                 <Popover.Button className="hidden lg:inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
                     <span>Picks</span>
                     <ChevronDownIcon className="h-5 w-5" aria-hidden="true" />

@@ -7,6 +7,8 @@ module.exports = {
       'green': '#37a643',
       'white': '#FEFFFE',
       'black': '#14110F',
+      'blurple': '#5865F2',
+      'light-blurple': '#8891f2',
     },
   },
   plugins: [],
