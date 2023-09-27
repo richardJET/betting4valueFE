@@ -10,7 +10,7 @@ export default function Community() {
                         <h2 className="text-7xl font-bold mb-8">Discover value together!</h2>
                         <p className="font-semibold text-lg mb-5">The Betting For Value community is more than just picking winners. Success is defined by positive expected value and closing line value.</p>
                         <p className="font-semibold text-lg my-2">Our vision is to cultivate a community where every bettor is a value seeker, using data to uncover hidden opportunities and drive consistent profitability.</p>
-                        <a href="https://discord.gg/WrB3HvHJ" target="_blank" rel="noreferrer" className="bg-blurple py-3 px-4 my-5 inline-flex justify-center items-center rounded-md font-bold border text-sm leading-6 text-white hover:bg-light-blurple transition-all focus:outline-none focus:ring-2s focus:ring-blurple focus:ring-offset-2">Join the Community  <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6ca814282eca7172c6_icon_clyde_white_RGB.svg" alt="discord logo" className="h-5 ms-2" /></a>
+                        <a href="https://discord.gg/WrB3HvHJ" target="_blank" rel="noreferrer" className="bg-blurple py-3 px-4 my-5 inline-flex justify-center items-center rounded-md font-bold border text-sm leading-6 text-white hover:bg-light-blurple transition-all focus:outline-none focus:ring-2s focus:ring-blurple focus:ring-offset-2">Join the Discord  <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6ca814282eca7172c6_icon_clyde_white_RGB.svg" alt="discord logo" className="h-5 ms-2" /></a>
                     </div>
                     <div className="w-1/3 hidden lg:inline-block my-12">
                         <img src="https://images.unsplash.com/photo-1544725121-be3bf52e2dc8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2667&q=80" alt="2 individuals on their laptops" className=" rounded-md object-cover h-full" />
@@ -26,7 +26,7 @@ export default function Community() {
                     <li className="w-48 m-5">
                         <FontAwesomeIcon icon={faDollarSign} size="2xl" />
                         <h4 className="text-2xl font-semibold my-2">Value Plays</h4>
-                        <p>Get notified when a specific sportsbooks has inaccruate lines</p>
+                        <p>Get notified when a specific sportsbooks has inaccurate lines</p>
                     </li>
                     <li className="w-48 m-5">
                         <FontAwesomeIcon icon={faThumbsUp} size="2xl" />
