@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 import { api } from './api';
+import PicksTable from './PicksTable';
 
 export default function PastPicks() {
     const[pastPicks, setPastPicks] = useState([]);
