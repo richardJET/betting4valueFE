@@ -1,4 +1,4 @@
-export default function CsgoTable({plays}) {
+export default function PicksTable({plays}) {
 
     return (            
             <div className="mt-4 flow-root">

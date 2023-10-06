@@ -1,8 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { api } from './api';
 import { useParams } from 'react-router-dom';
-import CsgoTable from './CsgoTable';
-import SoccerTable from './SoccerTable';
+import PicksTable from './PicksTable';
 import Stats from './Stats';
 import ErrorPage from './ErrorPage';
 
@@ -98,7 +97,7 @@ export default function BettingTable() {
                         )}
                     </div>
 
-                    {sport === 'csgo' ? <CsgoTable plays={plays} /> : <SoccerTable plays={plays} />}
+                    <PicksTable plays={plays} />
                 </div>
             : <h3 className="text-center text-lg">No Plays for Today</h3>}
         </>
