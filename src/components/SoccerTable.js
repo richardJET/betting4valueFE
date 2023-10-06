@@ -70,7 +70,7 @@ export default function SoccerTable({plays}) {
                                     <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium sm:pl-0 text-black">
                                         {play.league_name}
                                     </td>
-                                    <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{`${play.match_date} ${play.match_time}`}</td>
+                                    <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.start_time}</td>
                                     <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.home_team}</td>
                                     <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.away_team}</td>
                                     <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.play}</td>
