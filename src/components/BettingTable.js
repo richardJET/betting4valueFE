@@ -19,9 +19,13 @@ export default function BettingTable() {
                 let response;
                 if (sport === 'csgo') {
                     response = await api('/csgo-data/');
-                } else {
+                } else if (sport === 'soccer') {
                     response = await api('/betting-data/');
                 }
+                else{
+                    response = await api('/nfl-data/');
+                }
+
                 console.log(response.data)
                 setPlays(response.data);
             } catch (error) {
@@ -54,14 +58,14 @@ export default function BettingTable() {
     }, []);
 
     return (
-        sport === 'csgo' || sport === 'soccer' || sport === undefined ?
+        sport === 'csgo' || sport === 'soccer' || sport === 'football' || sport === undefined ?
         <>
             <Stats />
             {plays.length > 0 ?
                 <div className="relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                     <div className="sm:flex sm:items-center">
                         <div className="flex">
-                            <h1 className="text-base font-semibold leading-6 text-black">{sport === 'csgo' ? 'CS:GO plays' : 'Soccer Plays'}</h1>
+                                <h1 className="text-base font-semibold leading-6 text-black capitalize">{sport === undefined ? 'Soccer' : sport} Plays</h1>
                             <button className="mx-2" onClick={() => setInfo(true)}>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -87,11 +91,15 @@ export default function BettingTable() {
                                         to the latest betting lines. Before placing a bet ensure that your sportsbook's odds for the event are
                                         greater than the minimum odds listed below.
                                     </p> 
-                                    : <p>
+                                    : sport === 'soccer' ? <p>
                                         The soccer model uses advanced metrics to predict the outcome of soccer games and compares the results
                                         to the latest betting lines. Before placing a bet ensure that your sportsbook's odds for the event are
                                         greater than the minimum odds listed below.
-                                    </p>}   
+                                    </p>
+                                    : <p>
+                                        The NFL model uses advanced metrics to predict the outcome of NFL games and compares the results
+                                        to the latest betting lines. Before placing a bet ensure that your sportsbook's main line is equal to or less than the current spread or total.
+                                    </p>}
                                 </div>
                             </div>
                         )}

@@ -7,11 +7,13 @@ export default function PicksTable({plays}) {
                         <table className="min-w-full divide-y divide-black">
                             <thead>
                                 <tr>
+                                    {plays[0].play_value || plays[0].play_price?
                                     <th scope="col" className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-black sm:pl-0">
                                         <a href="/#" className="group inline-flex">
                                             League
                                         </a>
                                     </th>
+                                    : null}
                                     <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-black">
                                         <a href="/#" className="group inline-flex">
                                             Match Start
@@ -50,7 +52,7 @@ export default function PicksTable({plays}) {
                                                 </a>
                                             </th>
                                         </>
-                                        :
+                                        : plays[0].play_price ?
                                         <>
                                             <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-black">
                                                 <a href="/#" className="group inline-flex">
@@ -62,15 +64,18 @@ export default function PicksTable({plays}) {
                                                     Result
                                                 </a>
                                             </th>
-                                        </>}
+                                        </>
+                                        : null}
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-200 bg-white">
                                 {plays.map((play) => (
                                     <tr key={play.id}>
-                                        <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium sm:pl-0 text-black">
-                                            {play.league}
-                                        </td>
+                                        {play.play_value || play.play_price?
+                                            <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium sm:pl-0 text-black">
+                                                {play.league}
+                                            </td>
+                                        : null}
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.start_time}</td>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.home_team}</td>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.away_team}</td>
@@ -81,11 +86,12 @@ export default function PicksTable({plays}) {
                                             <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{parseFloat(play.expected_odds).toFixed(2)}</td>
                                             <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{parseFloat(play.play_value).toFixed(2)}</td>
                                         </>
-                                        :
+                                        : play.play_price ?
                                         <>
                                             <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{parseFloat(play.play_price).toFixed(2)}</td>
                                             <td className="whitespace-nowrap px-3 py-4 text-sm text-black">{play.result}</td>
-                                        </>}
+                                        </>
+                                        : null}
                                     </tr>
                                 ))}
                             </tbody>
