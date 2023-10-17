@@ -17,7 +17,7 @@ export default function Stats() {
                 let response;
                 if (sport === 'csgo') {
                     response = await api('/csgo-history/');
-                } else if (sport === 'soccer') {
+                } else {
                     response = await api('/soccer-history/');
                 }
                 setHistory(response.data);
