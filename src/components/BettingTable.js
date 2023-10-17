@@ -19,11 +19,11 @@ export default function BettingTable() {
                 let response;
                 if (sport === 'csgo') {
                     response = await api('/csgo-data/');
-                } else if (sport === 'soccer') {
-                    response = await api('/betting-data/');
+                } else if (sport === 'football') {
+                    response = await api('/nfl-data/');
                 }
                 else{
-                    response = await api('/nfl-data/');
+                    response = await api('/betting-data/');
                 }
 
                 console.log(response.data)
