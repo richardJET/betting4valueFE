@@ -14,7 +14,11 @@ export default function PastPicks() {
                 if (sport === 'csgo') {
                     response = await api('/csgo-history/');
                     setPastPicks(response.data);
-                } else {
+                } else if (sport === 'football') {
+                    response = await api('/football-history/');
+                    setPastPicks(response.data);
+                }
+                else {
                     response = await api('/soccer-history/');
                     setPastPicks(response.data);
                 }
