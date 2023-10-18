@@ -105,7 +105,7 @@ export default function BettingTable() {
                         )}
                     </div>
 
-                    <PicksTable plays={plays} />
+                    <PicksTable plays={plays} sport={sport} />
                 </div>
             : <h3 className="text-center text-lg">No Plays for Today</h3>}
         </>

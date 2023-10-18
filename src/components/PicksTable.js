@@ -1,5 +1,4 @@
-export default function PicksTable({plays}) {
-
+export default function PicksTable({ plays, sport }) {
     return (            
             <div className="mt-4 flow-root">
                 <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -7,7 +6,7 @@ export default function PicksTable({plays}) {
                         <table className="min-w-full divide-y divide-black">
                             <thead>
                                 <tr>
-                                    {plays[0].play_value || plays[0].play_price?
+                                    {sport !== 'football' ?
                                     <th scope="col" className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-black sm:pl-0">
                                         <a href="/#" className="group inline-flex">
                                             League
