@@ -4,4 +4,5 @@
 /soccer-history/* http://18.189.94.111:8000/soccer-history/ 200
 /csgo-history/* http://18.189.94.111:8000/csgo-history/ 200
 /nfl-data/* http://18.189.94.111:8000/nfl-data/ 200
+/football-history/* http://18.189.94.111:8000/football-history/ 200
 /* /index.html 200

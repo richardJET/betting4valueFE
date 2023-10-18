@@ -17,7 +17,11 @@ export default function Stats() {
                 let response;
                 if (sport === 'csgo') {
                     response = await api('/csgo-history/');
-                } else {
+                } 
+                else if (sport === 'football') {
+                    response = await api('/football-history/');
+                }
+                else {
                     response = await api('/soccer-history/');
                 }
                 setHistory(response.data);
@@ -89,7 +93,7 @@ export default function Stats() {
                     ))}
                 </dl>
                 <div className="mt-2 ml-2">
-                        <Link to={sport === 'csgo' ? "/csgo/history" : "/soccer/history"} className="text-sm font-semibold leading-7 text-indigo-600">
+                        <Link to={sport === undefined ? 'soccer/history' : 'history'} className="text-sm font-semibold leading-7 text-indigo-600">
                             View pick history <span aria-hidden="true">&rarr;</span>
                         </Link>
                 </div>
