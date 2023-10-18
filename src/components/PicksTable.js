@@ -70,7 +70,7 @@ export default function PicksTable({ plays, sport }) {
                             <tbody className="divide-y divide-gray-200 bg-white">
                                 {plays.map((play) => (
                                     <tr key={play.id}>
-                                        {play.play_value || play.play_price?
+                                        {sport !== 'football'?
                                             <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium sm:pl-0 text-black">
                                                 {play.league}
                                             </td>
