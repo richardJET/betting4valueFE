@@ -15,8 +15,8 @@ export default function Stats() {
         async function fetchStats() {
             try {
                 let response;
-                if (sport === 'csgo') {
-                    response = await api('/csgo-history/');
+                if (sport === 'cs') {
+                    response = await api('/cs-history/');
                 } 
                 else if (sport === 'football') {
                     response = await api('/football-history/');
