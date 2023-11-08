@@ -11,8 +11,8 @@ export default function PastPicks() {
         async function fetchHistory() {
             try{
                 let response;
-                if (sport === 'csgo') {
-                    response = await api('/csgo-history/');
+                if (sport === 'cs') {
+                    response = await api('/cs-history/');
                     setPastPicks(response.data);
                 } else if (sport === 'football') {
                     response = await api('/football-history/');

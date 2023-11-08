@@ -17,8 +17,8 @@ export default function BettingTable() {
         async function fetchPlays() {
             try {
                 let response;
-                if (sport === 'csgo') {
-                    response = await api('/csgo-data/');
+                if (sport === 'cs') {
+                    response = await api('/cs-data/');
                 } else if (sport === 'football') {
                     response = await api('/nfl-data/');
                 }
@@ -58,7 +58,7 @@ export default function BettingTable() {
     }, []);
 
     return (
-        sport === 'csgo' || sport === 'soccer' || sport === 'football' || sport === undefined ?
+        sport === 'cs' || sport === 'soccer' || sport === 'football' || sport === undefined ?
         <>
             <Stats />
             {plays.length > 0 ?
@@ -86,8 +86,8 @@ export default function BettingTable() {
                         {info && (
                             <div className='max-w-lg absolute left-40 top-0'>
                                 <div ref={modalRef} className="bg-white border border-gray-200 p-2">
-                                    {sport === 'csgo' ? <p>
-                                        The CS:GO model uses advanced metrics to predict the outcome of CS:GO games and compares the results
+                                    {sport === 'cs' ? <p>
+                                        The CS model uses advanced metrics to predict the outcome of CS games and compares the results
                                         to the latest betting lines. Before placing a bet ensure that your sportsbook's odds for the event are
                                         greater than the minimum odds listed below.
                                     </p> 

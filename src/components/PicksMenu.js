@@ -5,7 +5,7 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid'
 const sports = [
     { name: 'Soccer', href: '/soccer' },
     { name: 'Football', href: '/football' },
-    { name: 'CS:GO', href: '/csgo' },
+    { name: 'Counter-Strike', href: '/cs' },
 ]
 
 function classNames(...classes) {
