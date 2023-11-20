@@ -22,7 +22,7 @@ export default function Stats() {
                     response = await api('/football-history/');
                 }
                 else {
-                    response = await api('http://18.189.94.111:8000/soccer-history/');
+                    response = await api('/soccer-history/');
                 }
                 setHistory(response.data);
             } catch (error) {
