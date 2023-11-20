@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import PicksTable from './PicksTable';
 import Stats from './Stats';
 import ErrorPage from './ErrorPage';
+import { Link } from 'react-router-dom';
 
 export default function BettingTable() {
 
@@ -59,7 +60,14 @@ export default function BettingTable() {
     return (
         sport === 'cs' || sport === 'soccer' || sport === 'football' || sport === undefined ?
         <>
-            <Stats />
+            <div className="relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-4">
+                <Stats />
+                <div className="mt-2 ml-2">
+                    <Link to={sport === undefined ? 'soccer/history' : 'history'} className="text-sm font-semibold leading-7">
+                        View pick history <span aria-hidden="true">&rarr;</span>
+                    </Link>
+                </div>
+            </div>
             {plays.length > 0 ?
                 <div className="relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                     <div className="sm:flex sm:items-center">
@@ -90,7 +98,7 @@ export default function BettingTable() {
                                         to the latest betting lines. Before placing a bet ensure that your sportsbook's odds for the event are
                                         greater than the minimum odds listed below.
                                     </p> 
-                                    : sport === 'soccer' ? <p>
+                                    : sport === 'soccer' || sport === undefined ? <p>
                                         The soccer model uses advanced metrics to predict the outcome of soccer games and compares the results
                                         to the latest betting lines. Before placing a bet ensure that your sportsbook's odds for the event are
                                         greater than the minimum odds listed below.

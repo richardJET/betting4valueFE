@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 import { api } from './api';
+import Stats from './Stats';
 import PicksTable from './PicksTable';
 
 export default function PastPicks() {
@@ -33,7 +34,10 @@ export default function PastPicks() {
     return (
         <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
             <h1 className="text-3xl font-bold my-8">Past {sport} picks</h1>
-            {pastPicks.length > 0 ? <PicksTable plays={pastPicks} sport={sport} /> : <div className="text-center">Couldn't load pick history.</div>}
+            <Stats />
+            {pastPicks.length > 0 
+            ? <PicksTable plays={pastPicks} sport={sport} /> 
+            : <div className="text-center">Couldn't load pick history.</div>}
         </div>
     )
 }

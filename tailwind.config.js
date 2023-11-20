@@ -10,6 +10,7 @@ module.exports = {
       'blurple': '#5865F2',
       'light-blurple': '#8891f2',
       'light-green': '#F0FAF1',
+      'red': '#DC2626',
     },
   },
   plugins: [],

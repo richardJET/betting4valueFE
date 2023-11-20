@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { api } from './api';
 
@@ -22,7 +22,7 @@ export default function Stats() {
                     response = await api('/football-history/');
                 }
                 else {
-                    response = await api('/soccer-history/');
+                    response = await api('http://18.189.94.111:8000/soccer-history/');
                 }
                 setHistory(response.data);
             } catch (error) {
@@ -34,9 +34,9 @@ export default function Stats() {
 
     useEffect(() => {
         setStats([
-            { name: 'Past Week', stat: calculateStats(7, history)[0] + ' - ' + calculateStats(7, history)[1], roi: (calculateStats(7, history)[3] / calculateStats(7, history)[2] * 100).toFixed(2) + '%' },
-            { name: 'Past Month', stat: calculateStats(30, history)[0] + ' - ' + calculateStats(30, history)[1], roi: (calculateStats(30, history)[3] / calculateStats(30, history)[2] * 100).toFixed(2) + '%' },
-            { name: 'Past Year', stat: calculateStats(365, history)[0] + ' - ' + calculateStats(365, history)[1], roi: (calculateStats(365, history)[3] / calculateStats(365, history)[2] * 100).toFixed(2) + '%' },
+            { name: 'Past Week', stat: calculateStats(7, history)[0] + ' - ' + calculateStats(7, history)[1], roi: (calculateStats(7, history)[3] / calculateStats(7, history)[2] * 100).toFixed(2)},
+            { name: 'Past Month', stat: calculateStats(30, history)[0] + ' - ' + calculateStats(30, history)[1], roi: (calculateStats(30, history)[3] / calculateStats(30, history)[2] * 100).toFixed(2)},
+            { name: 'Past Year', stat: calculateStats(365, history)[0] + ' - ' + calculateStats(365, history)[1], roi: (calculateStats(365, history)[3] / calculateStats(365, history)[2] * 100).toFixed(2)},
         ]);
     }
     , [history]);
@@ -77,27 +77,20 @@ export default function Stats() {
 
     return (
         <>
-            <div className="relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-4">
-                <dl className="grid grid-cols-3 lg:gap-5 gap-1">
-                    {stats.map((item) => (
-                        <div key={item.name} className="lg:flex justify-between overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6">
-                            <div>
-                                <dt className="truncate text-sm font-medium text-gray-500">{item.name}</dt>
-                                <dd className="mt-1 lg:text-3xl font-semibold tracking-tight text-gray-900">{item.stat}</dd>
-                            </div>
-                            <div className="lg:flex items-end">
-                                <dt className="lg:mx-4 mt-2 truncate text-sm font-medium text-gray-500">ROI</dt>
-                                <dd className="text-sm">{item.roi}</dd>
-                            </div>
+            <dl className="grid grid-cols-3 lg:gap-5 gap-1">
+                {stats.map((item) => (
+                    <div key={item.name} className="lg:flex justify-between overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6">
+                        <div>
+                            <dt className="truncate text-sm font-medium text-gray-500">{item.name}</dt>
+                            <dd className="mt-1 lg:text-3xl font-semibold tracking-tight text-gray-900">{item.stat}</dd>
                         </div>
-                    ))}
-                </dl>
-                <div className="mt-2 ml-2">
-                        <Link to={sport === undefined ? 'soccer/history' : 'history'} className="text-sm font-semibold leading-7 text-indigo-600">
-                            View pick history <span aria-hidden="true">&rarr;</span>
-                        </Link>
-                </div>
-            </div>
+                        <div className="lg:flex items-end">
+                            <dt className="lg:mx-4 mt-2 truncate text-sm font-medium text-gray-500">ROI</dt>
+                            <dd className={item.roi > 0 ? 'text-green text-sm' : 'text-red text-sm'}>{item.roi + '%'}</dd>
+                        </div>
+                    </div>
+                ))}
+            </dl>
         </>
     )
 }

@@ -41,7 +41,7 @@ export default function PicksTable({ plays, sport }) {
                                     <th scope="col" className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-black sm:pl-0 cursor-pointer" onClick={() => handleSort('league')}>
                                         <div className="group inline-flex">
                                             League
-                                            {sortBy === 'league' ? sortOrder === 'asc' ? <ArrowUpIcon className="h-4 w-4 mt-1 ml-1" aria-hidden="true" /> : <ArrowDownIcon className="h-4 w-4 mt-1 ml-1" aria-hidden="true" />  : null}
+                                            {sortBy === 'league' ? sortOrder === 'asc' ? <ArrowUpIcon className="h-4 w-4 ml-1" aria-hidden="true" /> : <ArrowDownIcon className="h-4 w-4 ml-1" aria-hidden="true" />  : null}
                                         </div>
                                     </th>
                                     : null}
@@ -81,7 +81,7 @@ export default function PicksTable({ plays, sport }) {
                                         <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-black cursor-pointer" onClick={() => handleSort('play_value')}> 
                                                 <div className="group inline-flex">
                                                     Play Value (%)
-                                                    {sortBy === 'play_value' ? sortOrder === 'asc' ? <ArrowUpIcon className="h-4 w-4 mt-1 ml-1" aria-hidden="true" /> : <ArrowDownIcon className="h-4 w-4 mt-1 ml-1" aria-hidden="true" /> : null}
+                                                    {sortBy === 'play_value' ? sortOrder === 'asc' ? <ArrowUpIcon className="h-100 w-4 mt-1 ml-1" aria-hidden="true" /> : <ArrowDownIcon className="h-100 w-4 mt-1 ml-1" aria-hidden="true" /> : null}
                                                 </div>
                                             </th>
                                         </>
