@@ -11,7 +11,6 @@ export default function BettingTable() {
     const [info, setInfo] = useState(false);
     const modalRef = useRef();
     const { sport } = useParams();
-    console.log(sport);
 
     useEffect(() => {
         async function fetchPlays() {
