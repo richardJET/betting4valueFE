@@ -84,10 +84,12 @@ export default function Stats() {
                             <dt className="truncate text-sm font-medium text-gray-500">{item.name}</dt>
                             <dd className="mt-1 lg:text-3xl font-semibold tracking-tight text-gray-900">{item.stat}</dd>
                         </div>
-                        <div className="lg:flex items-end">
-                            <dt className="lg:mx-4 mt-2 truncate text-sm font-medium text-gray-500">ROI</dt>
-                            <dd className={item.roi > 0 ? 'text-green text-sm' : 'text-red text-sm'}>{item.roi + '%'}</dd>
-                        </div>
+                        {!isNaN(item.roi) && (
+                            <div className="lg:flex items-end">
+                                <dt className="lg:mx-4 mt-2 truncate text-sm font-medium text-gray-500">ROI</dt>
+                                <dd className={item.roi > 0 ? 'text-green text-sm' : 'text-red text-sm'}>{item.roi + '%'}</dd>
+                            </div>
+                        )};
                     </div>
                 ))}
             </dl>

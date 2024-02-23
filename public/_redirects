@@ -1,8 +1,8 @@
-/betting-data/* http://ec2-52-14-36-200.us-east-2.compute.amazonaws.com:8000/betting-data/ 200
-/blog-posts/* http://ec2-52-14-36-200.us-east-2.compute.amazonaws.com:8000/blog-posts/ 200
-/cs-data/* http://ec2-52-14-36-200.us-east-2.compute.amazonaws.com:8000/csgo-data/ 200
-/soccer-history/* http://ec2-52-14-36-200.us-east-2.compute.amazonaws.com:8000/soccer-history/ 200
-/cs-history/* http://ec2-52-14-36-200.us-east-2.compute.amazonaws.com:8000/csgo-history/ 200
-/nfl-data/* http://ec2-52-14-36-200.us-east-2.compute.amazonaws.com:8000/nfl-data/ 200
-/football-history/* http://ec2-52-14-36-200.us-east-2.compute.amazonaws.com:8000/football-history/ 200
+/betting-data/* http://ec2-3-138-193-211.us-east-2.compute.amazonaws.com:8000/betting-data/ 200
+/blog-posts/* http://ec2-3-138-193-211.us-east-2.compute.amazonaws.com:8000/blog-posts/ 200
+/cs-data/* http://ec2-3-138-193-211.us-east-2.compute.amazonaws.com:8000/csgo-data/ 200
+/soccer-history/* http://ec2-3-138-193-211.us-east-2.compute.amazonaws.com:8000/soccer-history/ 200
+/cs-history/* http://ec2-3-138-193-211.us-east-2.compute.amazonaws.com:8000/csgo-history/ 200
+/nfl-data/* http://ec2-3-138-193-211.us-east-2.compute.amazonaws.com:8000/nfl-data/ 200
+/football-history/* http://ec2-3-138-193-211.us-east-2.compute.amazonaws.com:8000/football-history/ 200
 /* /index.html 200
