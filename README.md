@@ -8,7 +8,7 @@ Technologies used: React, Django, Python, PostgreSQL, TailwindCSS, AWS
 
 Join our Discord server to receive real time value plays, analysis, and stay updated on the latest developments:  [![Discord](https://img.shields.io/discord/1043515857055273051?color=7289da&label=Discord&logo=discord&logoColor=ffffff&style=flat-square)](https://discord.gg/sPqG5Qkt)
 
-Follow us on <img src="https://cdn.cms-twdigitalassets.com/content/dam/about-twitter/x/brand-toolkit/logo-black.png.twimg.2560.png" width="48">(https://twitter.com/Betting_4_Value) for the weekly plays and updates.
+Follow us on <a href="https://twitter.com/Betting_4_Value"><img src="https://cdn.cms-twdigitalassets.com/content/dam/about-twitter/x/brand-toolkit/logo-black.png.twimg.2560.png" width="24"></a> for the weekly plays and updates.
 
 ### Responsible Gaming
 At Betting for Value, we believe in responsible gambling. We understand that sports betting can be addictive, and it's important to set limits and know when to take a break. We encourage our readers to gamble within their means and never to chase their losses.
