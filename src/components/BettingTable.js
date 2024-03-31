@@ -21,7 +21,7 @@ export default function BettingTable() {
                     response = await api('/cs-data/');
                 } else if (sport === "football") {
                   response = await api("/nfl-data/");
-                } else if (sport === "intl_basketball") {
+                } else if (sport === "basketball") {
                   response = await api("/intl-basketball-history/");
                 } else {
                   response = await api("/betting-data/");
@@ -59,7 +59,7 @@ export default function BettingTable() {
     }, []);
 
     return (
-        sport === 'cs' || sport === 'soccer' || sport === 'football' || sport === undefined ?
+        sport === 'cs' || sport === 'soccer' || sport === 'football' || sport === 'intl_basketball' || sport === undefined ?
         <>
             <div className="relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-4">
                 <Stats />
