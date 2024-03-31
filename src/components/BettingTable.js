@@ -19,11 +19,13 @@ export default function BettingTable() {
                 let response;
                 if (sport === 'cs') {
                     response = await api('/cs-data/');
-                } else if (sport === 'football') {
-                    response = await api('/nfl-data/');
-                }
-                else{
-                    response = await api('/betting-data/');
+                } else if (sport === "football") {
+                  response = await api("/nfl-data/");
+                } else if (sport === "intl_basketball") {
+                  response = await api("/intl-basketball-history/");
+                  setPastPicks(response.data);
+                } else {
+                  response = await api("/betting-data/");
                 }
 
                 console.log(response.data)
@@ -103,8 +105,12 @@ export default function BettingTable() {
                                         to the latest betting lines. Before placing a bet ensure that your sportsbook's odds for the event are
                                         greater than the minimum odds listed below.
                                     </p>
-                                    : <p>
+                                    : sport === 'football'? <p>
                                         The NFL model uses advanced metrics to predict the outcome of NFL games and compares the results
+                                        to the latest betting lines. Before placing a bet ensure that your sportsbook's main line is equal to or less than the current spread or total.
+                                    </p>
+                                    : <p>
+                                        The international basketball model uses advanced metrics to predict the outcome of international basketball games and compares the results
                                         to the latest betting lines. Before placing a bet ensure that your sportsbook's main line is equal to or less than the current spread or total.
                                     </p>}
                                 </div>
