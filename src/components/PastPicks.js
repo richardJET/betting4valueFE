@@ -19,7 +19,10 @@ export default function PastPicks() {
                     response = await api('/football-history/');
                     setPastPicks(response.data);
                 }
-                else {
+                else if (sport === 'intl_basketball') {
+                    response = await api('/intl-basketball-history/');
+                    setPastPicks(response.data);
+                } else {
                     response = await api('/soccer-history/');
                     setPastPicks(response.data);
                 }

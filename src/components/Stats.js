@@ -18,11 +18,13 @@ export default function Stats() {
                 if (sport === 'cs') {
                     response = await api('/cs-history/');
                 } 
-                else if (sport === 'football') {
-                    response = await api('/football-history/');
-                }
-                else {
-                    response = await api('/soccer-history/');
+                else if (sport === "football") {
+                  response = await api("/football-history/");
+                } else if (sport === "intl_basketball") {
+                  response = await api("/intl-basketball-history/");
+                  setPastPicks(response.data);
+                } else {
+                  response = await api("/soccer-history/");
                 }
                 setHistory(response.data);
             } catch (error) {
