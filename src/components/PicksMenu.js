@@ -6,7 +6,7 @@ const sports = [
     { name: 'Soccer', href: '/soccer' },
     { name: 'Football', href: '/football' },
     { name: 'Counter-Strike', href: '/cs' },
-    { name: 'Intl Basketball', href: '/intl_basketball' },
+    { name: 'Intl Basketball', href: '/basketball' },
 ]
 
 function classNames(...classes) {

@@ -20,7 +20,7 @@ export default function Stats() {
                 } 
                 else if (sport === "football") {
                   response = await api("/football-history/");
-                } else if (sport === "intl_basketball") {
+                } else if (sport === "basketball") {
                   response = await api("/intl-basketball-history/");
                 } else {
                   response = await api("/soccer-history/");
