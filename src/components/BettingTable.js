@@ -23,7 +23,6 @@ export default function BettingTable() {
                   response = await api("/nfl-data/");
                 } else if (sport === "intl_basketball") {
                   response = await api("/intl-basketball-history/");
-                  setPastPicks(response.data);
                 } else {
                   response = await api("/betting-data/");
                 }
