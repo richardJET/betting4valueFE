@@ -22,7 +22,7 @@ export default function BettingTable() {
                 } else if (sport === "football") {
                   response = await api("/nfl-data/");
                 } else if (sport === "basketball") {
-                  response = await api("/intl-basketball-history/");
+                  response = await api("/intl-basketball-data/");
                 } else {
                   response = await api("/betting-data/");
                 }
