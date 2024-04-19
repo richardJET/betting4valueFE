@@ -1,12 +1,12 @@
-import Header from './components/Header';
-import Footer from './components/Footer';
-import { Routes, Route } from 'react-router-dom';
-import BlogPages from './components/BlogPages';
-import Blog from './components/Blog';
-import BettingTable from './components/BettingTable';
-import ErrorPage from './components/ErrorPage';
-import PastPicks from './components/PastPicks';
-import Community from './components/Community';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import { Routes, Route } from "react-router-dom";
+import BlogPages from "./components/BlogPages";
+import Blog from "./components/Blog";
+import BettingTable from "./components/BettingTable";
+import ErrorPage from "./components/ErrorPage";
+import PastPicks from "./components/PastPicks";
+import Community from "./components/Community";
 
 function App() {
   return (
