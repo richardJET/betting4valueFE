@@ -22,6 +22,8 @@ export default function BettingTable() {
           response = await api("/nfl-data/");
         } else if (sport === "basketball") {
           response = await api("/intl-basketball-data/");
+        } else if (sport === "baseball") {
+          response = await api("/mlb-data/");
         } else {
           response = await api("/betting-data/");
         }
@@ -61,6 +63,7 @@ export default function BettingTable() {
     sport === "soccer" ||
     sport === "football" ||
     sport === "basketball" ||
+    sport === "baseball" ||
     sport === undefined ? (
     <>
       <div className="relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-4">
@@ -127,6 +130,14 @@ export default function BettingTable() {
                       betting lines. Before placing a bet ensure that your
                       sportsbook's main line is equal to or less than the
                       current spread or total.
+                    </p>
+                  ) : sport === "baseball" ? (
+                    <p>
+                      The MLB model uses advanced metrics to predict the outcome
+                      of MLB games and compares the results to the latest betting
+                      lines. Before placing a bet ensure that your sportsbook's
+                      odds for the event are greater than the minimum odds
+                      listed below.
                     </p>
                   ) : (
                     <p>
