@@ -134,7 +134,6 @@ export default function Stats() {
                 </dd>
               </div>
             )}
-            ;
           </div>
         ))}
       </dl>
