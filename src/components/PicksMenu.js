@@ -8,6 +8,7 @@ const sports = [
   { name: "Counter-Strike", href: "/cs" },
   { name: "Intl Basketball", href: "/basketball" },
   { name: "MLB", href: "/baseball" },
+  { name: "Tennis", href: "/tennis" },
 ];
 
 function classNames(...classes) {
