@@ -24,6 +24,9 @@ export default function PastPicks() {
         } else if (sport === "baseball") {
           response = await api("/mlb-history/");
           setPastPicks(response.data);
+        } else if (sport === "tennis") {
+          response = await api("/tennis-history/");
+          setPastPicks(response.data);
         } else {
           response = await api("/soccer-history/");
           setPastPicks(response.data);

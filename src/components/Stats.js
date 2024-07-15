@@ -23,6 +23,8 @@ export default function Stats() {
           response = await api("/intl-basketball-history/");
         } else if (sport === "baseball") {
           response = await api("/mlb-history/");
+        } else if (sport === "tennis") {
+          response = await api("/tennis-history/");
         } else {
           response = await api("/soccer-history/");
         }

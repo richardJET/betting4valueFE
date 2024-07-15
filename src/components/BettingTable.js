@@ -24,6 +24,8 @@ export default function BettingTable() {
           response = await api("/intl-basketball-data/");
         } else if (sport === "baseball") {
           response = await api("/mlb-data/");
+        } else if (sport === "tennis") {
+          response = await api("/tennis-data/");
         } else {
           response = await api("/betting-data/");
         }
@@ -64,6 +66,7 @@ export default function BettingTable() {
     sport === "football" ||
     sport === "basketball" ||
     sport === "baseball" ||
+    sport === "tennis" ||
     sport === undefined ? (
     <>
       <div className="relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-4">
@@ -138,6 +141,14 @@ export default function BettingTable() {
                       lines. Before placing a bet ensure that your sportsbook's
                       odds for the event are greater than the minimum odds
                       listed below.
+                    </p>
+                  )  : sport === "tennis" ? (
+                    <p>
+                      The tennis model uses court specific elo to predict the
+                      outcome of tennis games and compares the results to the
+                      latest betting lines. Before placing a bet ensure that your
+                      sportsbook's odds for the event are greater than the minimum
+                      odds listed below.
                     </p>
                   ) : (
                     <p>
